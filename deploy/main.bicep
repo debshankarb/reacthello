@@ -35,7 +35,7 @@ var environmentConfigurationMap = {
     appServicePlan: {
       sku: {
         name: 'S1'
-        capacity: 3
+        capacity: 2
       }
     }
     toyManualsStorageAccount: {
