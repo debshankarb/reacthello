@@ -54,5 +54,26 @@ resource azbicepas 'Microsoft.Web/sites@2022-09-01' = {
   ]
 }
 
+resource azbicepasp2 'Microsoft.Web/serverfarms@2022-09-01' = {
+  name: 'azbicep-dev-eus-asp2'
+  location: location1
+  sku: {
+    name: 'S1'
+    capacity: 1
+  }
+
+}
+
+resource azbicepas2 'Microsoft.Web/sites@2022-09-01' = {
+  name: 'azbicep-dev-eus-ap2'
+  location: location1
+
+  properties:{
+    serverFarmId:resourceId('Microsoft.Web/serverfarms' , 'azbicep-dev-eus-asp1')
+  }
+  dependsOn:[
+    azbicepasp2
+  ]
+}
 
 output storageEndpoint object = stg.properties.primaryEndpoints
