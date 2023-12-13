@@ -30,4 +30,15 @@ resource stg 'Microsoft.Storage/storageAccounts@2021-04-01' = {
   }
 }
 
+resource azbicepasp1 'Microsoft.Web/serverfarms@2022-09-01' = {
+  name: 'azbicep-dev-eus-asp1'
+  location: location
+  sku: {
+    name: 'S1'
+    capacity: 1
+  }
+
+}
+
+
 output storageEndpoint object = stg.properties.primaryEndpoints
