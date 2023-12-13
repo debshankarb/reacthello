@@ -31,17 +31,6 @@ resource stg 'Microsoft.Storage/storageAccounts@2021-04-01' = {
 }
 
 
-@description('Specifies the location for resources.')
-param location1 string = 'eastus'
-
-resource azbicepasp1 'Microsoft.Web/serverfarms@2020-12-01' = {
-  name: 'azbicep-dev-eus-asp1'
-  location: location1
-  sku: {
-    name: 'S1'
-    capacity: 1
-  }
-}
 
 
 
