@@ -53,7 +53,8 @@ resource azbicepas 'Microsoft.Web/sites@2022-09-01' = {
     azbicepasp1
   ]
 }
-param location2 string = 'centralindia'
+param location2 string = 'southindia'
+
 resource azbicepasp2 'Microsoft.Web/serverfarms@2022-09-01' = {
   name: 'azbicep-dev-eus-asp2'
   location: location2
