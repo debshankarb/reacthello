@@ -30,26 +30,7 @@ resource stg 'Microsoft.Storage/storageAccounts@2021-04-01' = {
   }
 }
 
-resource azbicepasp1 'Microsoft.Web/serverfarms@2020-12-01' = {
-  name: 'azbicep-dev-eus-asp1'
-  location: location
-  sku: {
-    name: 'S1'
-    capacity: 1
-  }
-}
 
-resource azbicepas 'Microsoft.Web/sites@2022-09-01' = {
-  name: 'azbicep-dev-eus-asp1'
-  location: location
-
-  properties:{
-    serverFarmId:resourceId('Microsoft.Web/serverfarms' , 'azbicep-dev-eus-asp1')
-  }
-  dependsOn:[
-    azbicepasp1
-  ]
-}
 
 
 
