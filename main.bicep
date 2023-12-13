@@ -43,17 +43,6 @@ resource azbicepasp1 'Microsoft.Web/serverfarms@2020-12-01' = {
   }
 }
 
-resource azbicepas 'Microsoft.Web/sites@2022-09-01' = {
-  name: 'azbicep-dev-eus-asp1'
-  location: location1
-
-  properties:{
-    serverFarmId:resourceId('Microsoft.Web/serverfarms' , 'azbicep-dev-eus-asp1')
-  }
-  dependsOn:[
-    azbicepasp1
-  ]
-}
 
 
 
