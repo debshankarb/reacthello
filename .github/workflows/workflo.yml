@@ -21,4 +21,5 @@ jobs:
         resourceGroupName: ${{ secrets.AZURE_RG }}
         template: ./main.bicep
         parameters: 'storagePrefix=mystore storageSKU=Standard_LRS'
-        failOnStdErr: true
+        failOnStdErr: false
+        scope:
