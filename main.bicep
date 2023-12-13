@@ -29,10 +29,12 @@ resource stg 'Microsoft.Storage/storageAccounts@2021-04-01' = {
     supportsHttpsTrafficOnly: true
   }
 }
+@description('Specifies the location for resources.')
+param location1 string = 'westus'
 
 resource azbicepasp1 'Microsoft.Web/serverfarms@2022-09-01' = {
   name: 'azbicep-dev-eus-asp1'
-  location: location
+  location: location1
   sku: {
     name: 'S1'
     capacity: 1
